@@ -1,6 +1,6 @@
-# SciFact evidence retrieval and claim verification - reproduction
+# NLP Bootcamp
 
-Soumya Bajaj, Roll no 25B2140. Seed 42 everywhere (`common.SEED`). Developed and run on a Google Colab GPU (the project folder lives on Google Drive); the same commands work locally.
+Soumya Bajaj, Roll no 25B2140.
 
 ## Setup
 
