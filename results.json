@@ -1,0 +1,57 @@
+{
+  "name": "Soumya Bajaj",
+  "roll_no": "25B2140",
+  "seed": 42,
+  "gpu_used": "Tesla T4 (15 GB), Google Colab",
+  "task1": {
+    "bm25_settings": "BM25 (Lucene idf, binary query tf), k1=1.2, b=0.3, stemming on, stopwords removed; grid-searched on validation",
+    "val_ndcg10": 0.8664
+  },
+  "task2": {
+    "general_model": "BAAI/bge-base-en-v1.5",
+    "scientific_model": "pritamdeka/S-PubMedBert-MS-MARCO",
+    "val_ndcg10_general": 0.891,
+    "val_ndcg10_scientific": 0.8438,
+    "index_time_sec": {
+      "general": 30.9,
+      "scientific": 28.5
+    },
+    "query_latency_ms": {
+      "general": 16.4,
+      "scientific": 16.3
+    },
+    "memory_mb": {
+      "general": 827,
+      "scientific": 1045
+    }
+  },
+  "task3": {
+    "hybrid_method": "score interpolation (minmax norm) weights bm25=0.30, general=0.70",
+    "reranker_model": "cross-encoder/ms-marco-MiniLM-L-12-v2 (fine-tuned on train claims)",
+    "rerank_top_k": 10,
+    "val_ndcg10_hybrid": 0.9136,
+    "val_ndcg10_rerank": 0.9061,
+    "rerank_query_latency_ms": 112.71
+  },
+  "task4": {
+    "base_model": "BAAI/bge-base-en-v1.5",
+    "val_ndcg10_random_negatives": 0.9013,
+    "val_ndcg10_hard_negatives": 0.9139
+  },
+  "task5": {
+    "retriever_used": "t4_hard",
+    "nli_model": "MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli (fine-tuned on train claims)",
+    "zero_shot_or_finetuned": "finetuned",
+    "val_f1": 0.72
+  },
+  "report_q1": {
+    "bm25_wins": [
+      673,
+      381
+    ],
+    "general_wins": [
+      766,
+      645
+    ]
+  }
+}
